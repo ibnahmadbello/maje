@@ -10,7 +10,7 @@
     <body class="w3-light-blue">
 
         <div class="w3-top">
-            <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <div class="w3-bar w3-white w3-card w3-hide-small" id="myNavbar">
               <a href="#" class="w3-bar-item w3-button w3-wide">About</a>
               <a href="about.html" class="w3-bar-item w3-button">Services</a>
               <a href="news.html" class="w3-bar-item w3-button">News</a>
@@ -31,6 +31,9 @@
             <a href="admin.html" onclick="w3_close()" class="w3-bar-item w3-button">News</a>
             <a href="achieve.html" onclick="w3_close()" class="w3-bar-item w3-button">Contact</a>
           </nav>
+
+          <!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
           
           <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
             <div class="w3-display-container mySlides">
@@ -112,17 +115,23 @@
           // Toggle between showing and hiding the sidebar when clicking the menu icon
           var mySidebar = document.getElementById("mySidebar");
 
+          // Get the DIV with overlay effect
+          var overlayBg = document.getElementById("myOverlay");
+
           function w3_open() {
           if (mySidebar.style.display === 'block') {
               mySidebar.style.display = 'none';
+              overlayBg.style.display = "none";
           } else {
               mySidebar.style.display = 'block';
+              overlayBg.style.display = "block";
             }
           }
 
           // Close the sidebar with the close button
           function w3_close() {
               mySidebar.style.display = "none";
+              overlayBg.style.display = "none";
           }
 
           </script>  
