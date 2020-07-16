@@ -50,11 +50,11 @@
 
           <div class="w3-container">
               <div class="w3-row w3-stretch">
-                <a href="#"><div class="w3-panel w3-half w3-indigo w3-hover-opacity">
+                <a href="mailto:dixixop701@gomail5.com"><div class="w3-panel w3-half w3-indigo w3-hover-opacity">
                     <p class="w3-large w3-center">Write to Maje.<i class="fa fa-envelope w3-margin"></i></p>
                   </div>
                 </a>
-                <a href="#"><div class="w3-panel w3-half w3-blue w3-hover-opacity">
+                <a id="help"><div class="w3-panel w3-half w3-blue w3-hover-opacity">
                     <p class="w3-large w3-center">How can we help you?<i class="fa fa-question w3-margin"></i></p>
                   </div>
                 </a>  
@@ -105,7 +105,7 @@
             <label for="subject">Message</label>
             <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" id="submit">
         </form>
     </div>
     </div>
@@ -153,21 +153,11 @@
               mySidebar.style.display = "none";
           }
 	  var modal = document.getElementById("contact")
-	  var rightContact = document.getElementById("right_contact")
-	  var sideContact = document.getElementById("side_contact")
-	  var bottomContact = document.getElementById("bottom_contact")
+	  var help = document.getElementById("help")
 	  var span = document.getElementsByClassName("close")[0];
 	  var submit = document.getElementById("submit");
 
-	  rightContact.onclick = function() {
-	     modal.style.display = "block";
-	  }
-
-	  sideContact.onclick = function() {
-	     modal.style.display = "block";
-	  }
-
-	  bottomContact.onclick = function() {
+	  help.onclick = function() {
 	     modal.style.display = "block";
 	  }
 	  
