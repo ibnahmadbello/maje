@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="contact.css">
 
     <body class="w3-light-blue">
 
@@ -17,7 +18,7 @@
                 <a href="about.html" class="w3-bar-item w3-button">About</a>                
                 <a href="news.html" class="w3-bar-item w3-button">News</a>
                 <a href="initiatives.html" class="w3-bar-item w3-button">Initiatives</a>
-                <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+                <a id="right_contact" class="w3-bar-item w3-button">Contact</a>
               </div>
           
 
@@ -34,7 +35,7 @@
             <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button">About</a>            
             <a href="news.html" onclick="w3_close()" class="w3-bar-item w3-button">News</a>
             <a href="initiatives.html" onclick="w3_close()" class="w3-bar-item w3-button">Initiatives</a>
-            <a href="contact.html" onclick="w3_close()" class="w3-bar-item w3-button">Contact</a>
+            <a id="side_contact" onclick="w3_close()" class="w3-bar-item w3-button">Contact</a>
           </nav>
           
           <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
@@ -88,8 +89,27 @@
           </div>   
 
           <!-- Contact -->
-  <div class="w3-container" id="contact">
+  <div class="modal" id="contact">
     
+    <div class="model-content">
+      <span class="close">&times;</span>
+      <h3>Contact Form</h3>
+      <div class="container">
+        <form name="contact" method="POST" data-netlify=true>
+            <label for="fname">Full Name</label>
+            <input type="text" id="fname" name="fullname" placeholder="Your name..">
+
+            <label for="lname">Suject</label>
+            <input type="text" id="subject" name="subject" placeholder="Subject">
+
+            <label for="subject">Message</label>
+            <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    </div>
+
   </div>
 
   <div class="w3-content" style="max-width:500px">
@@ -110,7 +130,7 @@
             <a href="#" class="w3-bar-item w3-button w3-wide">About</a>
             <a href="news.html" class="w3-bar-item w3-button">News</a>
             <a href="about.html" class="w3-bar-item w3-button">Initiatives</a>
-            <a href="admin.html" class="w3-bar-item w3-button">Contact</a>
+            <a id="bottom_contact" class="w3-bar-item w3-button">Contact</a>
            </div>
            <p>Powered by <a href="https://www.arewasport.com/" target="_blank">ArewaSports</a></p>
            <p>&copy; Copyright 2020</p>
@@ -132,6 +152,38 @@
           function w3_close() {
               mySidebar.style.display = "none";
           }
+	  var modal = document.getElementById("contact")
+	  var rightContact = document.getElementById("right_contact")
+	  var sideContact = document.getElementById("side_contact")
+	  var bottomContact = document.getElementById("bottom_contact")
+	  var span = document.getElementsByClassName("close")[0];
+	  var submit = document.getElementById("submit");
+
+	  rightContact.onclick = function() {
+	     modal.style.display = "block";
+	  }
+
+	  sideContact.onclick = function() {
+	     modal.style.display = "block";
+	  }
+
+	  bottomContact.onclick = function() {
+	     modal.style.display = "block";
+	  }
+	  
+	  span.onclick = function() {
+	     modal.style.display = "none";
+	  }
+
+	  window.onclick = function(event) {
+	     if (event.target == modal) {
+	        modal.style.display = "none";
+  	     }
+	  }
+
+	  submit.onclick = function(event) {
+	      modal.style.display = "none";
+	  }
 
           </script>  
 
